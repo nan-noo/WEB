@@ -6,6 +6,33 @@
 <style>
 body {
 	background-color: rgb(156, 228, 166);
+	text-align: center;
+	margin: 0 auto;
+}
+
+li {
+	background-color: rgb(146, 233, 204);
+	width: 100px;
+	height: 30px;
+	list-style-type: none;
+	margin-right: 10px;
+	line-height: 30px;
+	display: inline-block;
+	box-shadow: 1px 1px 3px 0 rgb(190, 190, 190);
+}
+
+ul {
+	padding: 0;
+}
+
+main nav ul li {
+	height: 100px;
+	line-height: 100px;
+}
+
+header nav {
+	float: right;
+	height: inherit;
 }
 
 .box {
@@ -14,8 +41,20 @@ body {
 	margin: 10px;
 }
 
-main, footer {
-	text-align: center;
+header {
+	height: 60px;
+}
+
+img {
+	width: auto;
+	height: auto;
+	max-width: 500px;
+	max-height: 500px;
+}
+
+p {
+	width: 300px;
+	margin: 0 auto;
 }
 </style>
 </head>
@@ -23,24 +62,24 @@ main, footer {
 	<header class='box'>
 		<nav>
 			<ul>
-				<li><a href='index.html'>홈</a></li>
-				<li><a href='aboutme.html'>자기소개</a></li>
-				<li><a href='photo.html'>내사진</a></li>
-				<li>몇시에요?</li>
+				<a href='index.html'><li>홈</li></a>
+				<a href='aboutme.html'><li>자기소개</li></a>
+				<a href='photo.html'><li>내사진</li></a>
+				<a href='today'><li>몇시에요?</li></a>
 			</ul>
 		</nav>
 	</header>
 	<main class='box'>
 		<h3>웹 개발자가 되고 싶어요~!</h3>
-		<div>asdfasfs</div>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta voluptate voluptatibus tempore amet, possimus quas quia omnis aperiam blanditiis impedit totam aut, sunt excepturi fugiat nesciunt et tempora? Suscipit, odit?</p>
 		<nav>
 			<ul>
-				<li><a href='aboutme.html'>자기소개</a></li>
-				<li><a href='photo.html'>내사진</a></li>
+				<a href='aboutme.html'><li>자기소개</li></a>
+				<a href='photo.html'><li>내사진</li></a>
 			</ul>
 		</nav>
 		<div>
-			<img src=''>
+			<img src='https://images.unsplash.com/photo-1562504208-03d85cc8c23e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'>
 		</div>
 	</main>
 	<footer class='box'>
