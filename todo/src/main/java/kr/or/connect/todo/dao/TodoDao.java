@@ -84,7 +84,7 @@ public class TodoDao {
 					String type = rs.getString(5);
 					String regdate = rs.getString(6);
 					
-					TodoDto todo = new TodoDto(id, title, name, sequence, type, regdate);
+					TodoDto todo = new TodoDto(id, name, regdate, sequence, title, type);
 					todos.add(todo); // 반복할때마다 todo인스턴스를 생성하여 todos에 추가한다.
 				}
 			} catch (Exception e) {
