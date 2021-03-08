@@ -3,40 +3,7 @@
     <head>
         <title>WEB</title>
         <meta charset="utf-8">
-        <script>
-            var Color = {
-                "setColorAll": function(tag, color){
-                    var i = 0;
-                    var list = document.querySelectorAll(tag);
-
-                    while(i < list.length){
-                        list[i].style.color = color;
-                        i = i + 1;
-                    }
-                },
-                "setColor": function(tag, color){
-                    document.querySelector(tag).style.color = color;
-                },
-                "setBgColor": function(tag, color){
-                    document.querySelector(tag).style.backgroundColor = color;
-                }
-            }
-
-            function nightDayHandler(self){
-                if(self.value === 'night'){
-                    Color.setBgColor('body', 'black');
-                    Color.setColor('body', 'white');
-                    self.value = 'day';
-                    Color.setColorAll('a', 'powderblue');
-                }
-                else{
-                    Color.setBgColor('body', 'white');
-                    Color.setColor('body', 'black');
-                    self.value = 'night';
-                    Color.setColorAll('a', 'blue');
-                }
-            }
-        </script>
+        <script src="colors.js"></script>
     </head>
     <body>
         <h1><a href="index.html">WEB</a></h1>
@@ -49,7 +16,7 @@
         document.querySelector('body').style.color = 'black';
         ">
 
-        <input id="night_day_btn" type="button" value="night" onclick="
+        <input type="button" value="night" onclick="
             nightDayHandler(this);
         ">
 
