@@ -4,30 +4,36 @@
         <title>WEB</title>
         <meta charset="utf-8">
         <script>
-            function setColorAll(tag, color){
-                var i = 0;
-                var list = document.querySelectorAll(tag);
+            var Color = {
+                "setColorAll": function(tag, color){
+                    var i = 0;
+                    var list = document.querySelectorAll(tag);
 
-                while(i < list.length){
-                    list[i].style.color = color;
-                    i = i + 1;
+                    while(i < list.length){
+                        list[i].style.color = color;
+                        i = i + 1;
+                    }
+                },
+                "setColor": function(tag, color){
+                    document.querySelector(tag).style.color = color;
+                },
+                "setBgColor": function(tag, color){
+                    document.querySelector(tag).style.backgroundColor = color;
                 }
             }
 
             function nightDayHandler(self){
-                var target = document.querySelector('body');
-
                 if(self.value === 'night'){
-                    target.style.backgroundColor = 'black';
-                    target.style.color = 'white';
+                    Color.setBgColor('body', 'black');
+                    Color.setColor('body', 'white');
                     self.value = 'day';
-                    setColorAll('a', 'powderblue');
+                    Color.setColorAll('a', 'powderblue');
                 }
                 else{
-                    target.style.backgroundColor = 'white';
-                    target.style.color = 'black';
+                    Color.setBgColor('body', 'white');
+                    Color.setColor('body', 'black');
                     self.value = 'night';
-                    setColorAll('a', 'blue');
+                    Color.setColorAll('a', 'blue');
                 }
             }
         </script>
