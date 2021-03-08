@@ -1,18 +1,25 @@
 var Color = {
     "setColorAll": function(tag, color){
-        var i = 0;
-        var list = document.querySelectorAll(tag);
+        // var i = 0;
+        // var list = document.querySelectorAll(tag);
 
-        while(i < list.length){
-            list[i].style.color = color;
-            i = i + 1;
-        }
+        // while(i < list.length){
+        //     list[i].style.color = color;
+        //     i = i + 1;
+        // }
+
+        //using jquery
+        $(tag).css('color', color);
     },
     "setColor": function(tag, color){
-        document.querySelector(tag).style.color = color;
+        // document.querySelector(tag).style.color = color;
+        //using jquery
+        $(tag).css('color', color);
     },
     "setBgColor": function(tag, color){
-        document.querySelector(tag).style.backgroundColor = color;
+        // document.querySelector(tag).style.backgroundColor = color;
+        //using jquery
+        $(tag).css('backgroundColor', color);
     }
 }
 
