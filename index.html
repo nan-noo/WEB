@@ -4,30 +4,30 @@
         <title>WEB</title>
         <meta charset="utf-8">
         <script>
+            function setColorAll(tag, color){
+                var i = 0;
+                var list = document.querySelectorAll(tag);
+
+                while(i < list.length){
+                    list[i].style.color = color;
+                    i = i + 1;
+                }
+            }
+
             function nightDayHandler(self){
                 var target = document.querySelector('body');
-                var alist = document.querySelectorAll('a');
-                var i = 0;
 
                 if(self.value === 'night'){
                     target.style.backgroundColor = 'black';
                     target.style.color = 'white';
-                    self.value = 'day'
-
-                    while(i < alist.length){
-                        alist[i].style.color = 'powderblue';
-                        i = i + 1;
-                    }
+                    self.value = 'day';
+                    setColorAll('a', 'powderblue');
                 }
                 else{
                     target.style.backgroundColor = 'white';
                     target.style.color = 'black';
-                    self.value = 'night'
-                    
-                    while(i < alist.length){
-                        alist[i].style.color = 'blue';
-                        i = i + 1;
-                    }
+                    self.value = 'night';
+                    setColorAll('a', 'blue');
                 }
             }
         </script>
