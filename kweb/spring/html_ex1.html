@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="survey-title">
+        <h1>KWEB 설문조사</h1>
+        <img src="http://info.korea.ac.kr/_res/info/img/community/img_kweb.gif"><br>
+        <a href="https://www.facebook.com/kwebfamily/">KWEB 페이스북 페이지</a>
+    </div>
+    <div class="survey-question">
+        <h3>1. 이름을 작성해주세요.</h3>
+        <input type="text" name="name" id="survey-name">
+    </div>
+    <div class="survey-question"> 
+        <h3>2. 학번을 작성해주세요.</h3>
+        <input type="text" name="studentId" id="survey-student-id">
+    </div>
+    <div class="survey-question"> 
+        <h3>3. 현재 회원 등급을 선택해주세요.</h3>
+        <input type="radio" name="memLv" value="lv1">준회원 
+        <input type="radio" name="memLv" value="lv2">정회원 
+        <input type="radio" name="memLv" value="lv3">휴회원 
+    </div>
+    <div class="survey-question">
+        <h3>4. 본인이 관심 있는 분야를 모두 선택해주세요.</h3>
+        <input type="checkbox" name="interest" value="front-end">프론트엔드 프로그래밍
+        <input type="checkbox" name="interest" value="back-end">백엔드 프로그래밍
+        <input type="checkbox" name="interest" value="crawling">웹 크롤링
+        <input type="checkbox" name="interest" value="security">웹 보안
+        <input type="checkbox" name="interestEtc" value="etc">기타
+        <input type="text" name="etc" id="survey-etc">
+    </div>
+    <div class="survey-question">
+        <h3>5. 2020년 봄학기 KWEB 스터디에 관한 전반적인 평가와 피드백을 작성해주세요.</h3>
+        <textarea cols="100" rows="8"></textarea>
+    </div>
+    <button id="submit_btn">제출</button>
+</body>
+</html>
