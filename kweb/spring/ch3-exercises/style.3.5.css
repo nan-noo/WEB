@@ -33,7 +33,6 @@
         display: inline-block;
         width: 10%;
         height: 280px;
-        background-color: gold;
         margin-right: 2px;
         margin-bottom: 0;
     }
@@ -42,6 +41,5 @@
         display: inline-block;
         width: 85%;
         height: 280px;
-        background-color: skyblue;
     }
 }
