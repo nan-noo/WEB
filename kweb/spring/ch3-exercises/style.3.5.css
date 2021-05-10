@@ -1,0 +1,47 @@
+.header{
+    height: 50px;
+    background-color: pink;
+    border: 1px solid palevioletred;
+}
+
+.body{
+    height: fit-content;
+    margin: 5px 0;
+}
+
+.navbar{
+    height: 75px;
+    background-color: gold;
+    border: 1px solid goldenrod;
+    margin-bottom: 5px;
+}
+
+.content{
+    height: 200px;
+    background-color: skyblue;
+    border: 1px solid cornflowerblue;
+}
+
+.footer{
+    height: 75px;
+    background-color: aquamarine;
+    border: 1px solid aqua;
+}
+
+@media only screen and (min-width: 800px){
+    .navbar{
+        display: inline-block;
+        width: 10%;
+        height: 280px;
+        background-color: gold;
+        margin-right: 2px;
+        margin-bottom: 0;
+    }
+    
+    .content{
+        display: inline-block;
+        width: 85%;
+        height: 280px;
+        background-color: skyblue;
+    }
+}
