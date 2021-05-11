@@ -34,7 +34,7 @@ var app = http.createServer((request,response) => {
                 var filteredId = path.parse(id).base;
                 fs.readFile(`./data/${filteredId}`, 'utf8', (err, desc) => {
                     //if(err) throw err;
-                    var title = id;
+                    var title = filteredId;
                     var sanitizedTitle = sanitizeHtml(title);
                     var sanitizedDesc = sanitizeHtml(desc);
                     var list = template.list(files);
@@ -98,23 +98,25 @@ var app = http.createServer((request,response) => {
             console.log(filteredId); //////////////
             fs.readFile(`data/${filteredId}`, 'utf8', (err, desc) => {
                 //if(err) throw err;
-                var title = id;
+                var title = filteredId;
+                var sanitizedTitle = sanitizeHtml(title);
+                var sanitizedDesc = sanitizeHtml(desc);
                 var list = template.list(files);
                 var body = `
                     <form action="/update_process" method="POST">
-                        <input type="hidden" name="id" value="${title}">
-                        <p><input type="text" name="title" placeholder="title" value="${title}"></p>
+                        <input type="hidden" name="id" value="${sanitizedTitle}">
+                        <p><input type="text" name="title" placeholder="title" value="${sanitizedTitle}"></p>
                         <p>
-                            <textarea name="desc" placeholder="description">${desc}</textarea>
+                            <textarea name="desc" placeholder="description">${sanitizedDesc}</textarea>
                         </p>
                         <p><input type="submit"></p>  
                     </form>
                 `;
                 var control = `
                     <a href="/create">create</a>
-                    <a href="/update?id=${title}">update</a>
+                    <a href="/update?id=${sanitizedTitle}">update</a>
                 `;
-                var html = template.html(title, list, body, control);
+                var html = template.html(sanitizedTitle, list, body, control);
                 response.writeHead(200);
                 response.end(html);
             });
