@@ -4,11 +4,13 @@ var qs = require('querystring');
 var path = require('path');
 var sanitizeHtml = require('sanitize-html');
 var template = require('./lib/template.js');
+console.log('hello no daemon');
 
 var app = http.createServer((request,response) => {
-    var _url = request.url;
-    var queryData = new URL(_url, 'http://localhost:3000').searchParams; // 객체 URLSearchParams {id => HTML}
-    var pathname = new URL(_url, 'http://localhost:3000').pathname;
+    var url = request.url;
+    var base = request.headers.host; // localhost:3000
+    var queryData = new URL(url, 'http://' + base).searchParams; // 객체 URLSearchParams {id => HTML}
+    var pathname = new URL(url, 'http://' + base).pathname;
     var id = queryData.get('id');
     
     if(pathname === '/'){
@@ -95,7 +97,7 @@ var app = http.createServer((request,response) => {
     else if(pathname === '/update'){
         fs.readdir('./data', (err, files) => {
             var filteredId = path.parse(id).base;
-            console.log(filteredId); //////////////
+
             fs.readFile(`data/${filteredId}`, 'utf8', (err, desc) => {
                 //if(err) throw err;
                 var title = filteredId;
