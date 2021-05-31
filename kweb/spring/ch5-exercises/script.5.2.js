@@ -14,8 +14,7 @@ const displayTimes = () => {
     
     if(1 <= number && number <= 9 && Number.isInteger(number)){
         // 구구단 계산
-        let table = calcTimesTable(number);
-        result.innerText = table;
+        result.innerText = calcTimesTable(number);
     }
     else{
         result.innerText = 'Input Error!';
