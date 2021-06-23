@@ -19,7 +19,7 @@ function RightMenu(props) {
     });
   };
 
-  if (user.userData && !user.userData.isAuth) {
+  if (user.userData && !user.userData.isAuth) { // not login
     return (
       <Menu mode={props.mode}>
         <Menu.Item key="mail">
@@ -30,9 +30,12 @@ function RightMenu(props) {
         </Menu.Item>
       </Menu>
     )
-  } else {
+  } else { // login
     return (
       <Menu mode={props.mode}>
+        <Menu.Item key="upload">
+          <a href="/video/upload">VideoUpload</a>
+        </Menu.Item>
         <Menu.Item key="logout">
           <a onClick={logoutHandler}>Logout</a>
         </Menu.Item>

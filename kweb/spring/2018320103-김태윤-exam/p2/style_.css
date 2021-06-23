@@ -1,0 +1,21 @@
+#modal{
+    border: 2px solid black;
+
+    position: fixed;
+    right: 500px;
+    bottom: 300px;
+
+    background-color: wheat;
+    width: 300px;
+    padding: 5px;
+    height: fit-content;
+}
+
+.modal-btn{
+    border-top: 1px solid gray;
+    text-align: right;
+}
+
+#modal-title{
+    border-bottom: 1px solid gray
+}

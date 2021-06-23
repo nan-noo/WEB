@@ -3,3 +3,8 @@ const words = ['tacky','party','disappear','mug','cat','unpack','liquid','last',
 const cleanChildren = element => {
     while (element.lastChild) element.removeChild(element.lastChild);
 };
+
+const searchWords = () => {
+    inputV = document.getElementById('word-search-input').value;
+    
+}
