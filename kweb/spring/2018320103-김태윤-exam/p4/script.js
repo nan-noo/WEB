@@ -1,12 +1,13 @@
 const hamburgerOnOff = () => {
     let navlist = document.getElementById('nav-dropdown-list');
+    let status = navlist.getAttribute('status');
 
-    if(navlist.status === "open"){
-        navlist.status = "closed";
-        navlist.style.visibility = "hidden";
+    if(status === "open"){
+        navlist.setAttribute('status', 'closed');
+        navlist.style.display = "none";
     }
-    else if(navlist.status === "closed"){
-        navlist.status = "open";
-        navlist.style.visibility = "visible";
+    else if(status === "closed"){
+        navlist.setAttribute('status', 'open');
+        navlist.style.display = "block";
     }
 }
