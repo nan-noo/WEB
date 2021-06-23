@@ -5,6 +5,17 @@ const cleanChildren = element => {
 };
 
 const searchWords = () => {
-    inputV = document.getElementById('word-search-input').value;
-    
+    let searchResult = document.getElementById('search-results');
+    let inputV = document.getElementById('word-search-input').value;
+
+    console.log(inputV);
+    cleanChildren(searchResult);
+
+    if(inputV.length === 0) return;
+
+    for(const word of words){
+        if(word.indexOf(inputV) !== -1){
+            searchResult.innerHTML += "<li>" + word + "</li>"
+        }
+    }
 }
